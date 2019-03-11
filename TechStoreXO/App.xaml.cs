@@ -11,7 +11,7 @@ namespace TechStoreXO
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LoginPage()) { Title = "TechStoreXO" };
         }
 
         protected override void OnStart()
