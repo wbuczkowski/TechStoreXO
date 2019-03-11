@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System.Text.RegularExpressions;
+
+using Xamarin.Forms;
 
 using ZXing.Net.Mobile.Forms;
 
@@ -15,7 +17,8 @@ namespace TechStoreXO
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Navigation.PopAsync();
-                    DisplayAlert("Scanned Barcode", result.Text, "OK");
+                    // DisplayAlert("Scanned Barcode", result.Text, "OK");
+                    DependencyService.Get<IMessage>().LongAlert(result.Text);
 
                     entryUserID.Text = result.Text;
                     Login_Clicked(sender, e);
@@ -27,11 +30,30 @@ namespace TechStoreXO
 
         async void Login_Clicked(object sender, System.EventArgs e)
         {
-            string userid = entryUserID.Text;
-            // TODO: validate user id
+            if (Validate(entryUserID.Text))
+            {
+                // Navigate to Main Page
+                await Navigation.PushAsync(new MainPage() { userID = entryUserID.Text });
+            }
+            else
+            {
+                DependencyService.Get<IMessage>().LongAlert("Log in error");
+            }
+        }
 
-            // Navigate to Main Page
-            await Navigation.PushAsync(new MainPage() { userID = userid });
+        private bool Validate(string userid)
+        {
+            if (Regex.IsMatch(userid, "[a-zA-Z]{3}.*"))
+            {
+                // first three characters are letters
+                if (userid == "GETMEOUT")
+                {
+                    //TODO: quit?
+                }
+                return true;
+            }
+            else
+                return false;
         }
 
         public LoginPage()
