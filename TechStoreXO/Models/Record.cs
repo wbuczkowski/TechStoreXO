@@ -1,6 +1,4 @@
-using System;
-
-namespace TechstoreXO.Models
+namespace TechStoreXO.Models
 {
     public class Record
     {

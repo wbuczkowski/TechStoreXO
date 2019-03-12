@@ -1,6 +1,6 @@
 using System;
 using Xamarin.Forms;
-// using TechStoreXO.Models;
+using TechStoreXO.Models;
 
 namespace TechStoreXO
 {
@@ -13,8 +13,12 @@ namespace TechStoreXO
 
         void Save_Clicked(object sender, EventArgs e)
         {
-            // var record = (Record)BindingContext;
+            var record = (Record)BindingContext;
+        }
 
+        void Switch_Clicked(object sender, EventArgs e)
+        {
+            // TODO: switch
         }
     }
 }
