@@ -1,6 +1,6 @@
 using System;
 using Xamarin.Forms;
-using TechStoreXO.Models;
+// using TechStoreXO.Models;
 
 namespace TechStoreXO
 {
@@ -11,8 +11,9 @@ namespace TechStoreXO
             InitializeComponent();
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        void Save_Clicked(object sender, EventArgs e)
         {
+            // var record = (Record)BindingContext;
 
         }
     }
