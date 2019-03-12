@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TechStoreXO.LoginPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Entry x:Name="entryUserID" Placeholder="UserID">
-            <Entry.Keyboard>
-                <Keyboard x:FactoryMethod="Create">
-                    <x:Arguments>
-                        <KeyboardFlags>CapitalizeCharacter</KeyboardFlags>
-                    </x:Arguments>
-                </Keyboard>
-            </Entry.Keyboard>
-        </Entry>
-        <Button Text="Log In" Clicked="Login_Clicked" />
-        <Label Text="Login prompt" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-        <Button Text="Scan" Clicked="Scan_Clicked" />
-    </StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:TechStoreXO" x:Class="TechStoreXO.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Place new controls here -->
+            <Entry x:Name="UserID" Placeholder="UserID">
+                <Entry.Keyboard>
+                    <Keyboard x:FactoryMethod="Create">
+                        <x:Arguments>
+                            <KeyboardFlags>CapitalizeCharacter</KeyboardFlags>
+                        </x:Arguments>
+                    </Keyboard>
+                </Entry.Keyboard>
+            </Entry>
+            <Button Text="Log In" Clicked="Login_Clicked" />
+            <Label Text="Login prompt" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Button Text="Scan" Clicked="Scan_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

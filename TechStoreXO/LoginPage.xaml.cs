@@ -18,9 +18,9 @@ namespace TechStoreXO
                 {
                     Navigation.PopAsync();
                     // DisplayAlert("Scanned Barcode", result.Text, "OK");
-                    DependencyService.Get<IMessage>().LongAlert(result.Text);
+                    DependencyService.Get<IMessage>().ShortAlert(result.Text);
 
-                    entryUserID.Text = result.Text;
+                    UserID.Text = result.Text;
                     Login_Clicked(sender, e);
                 });
             };
@@ -30,10 +30,10 @@ namespace TechStoreXO
 
         async void Login_Clicked(object sender, System.EventArgs e)
         {
-            if (Validate(entryUserID.Text))
+            if (Validate(UserID.Text))
             {
                 // Navigate to Main Page
-                await Navigation.PushAsync(new MainPage() { userID = entryUserID.Text });
+                await Navigation.PushAsync(new MainPage() { UserID = UserID.Text });
             }
             else
             {

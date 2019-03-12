@@ -6,7 +6,7 @@ namespace TechStoreXO
 {
     public partial class MainPage : ContentPage
     {
-        public string userID;
+        public string UserID { get; set; }
         async void Scan_Clicked(object sender, System.EventArgs e)
         {
             ZXingScannerPage scanPage = new ZXingScannerPage();
